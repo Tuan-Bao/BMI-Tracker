@@ -59,6 +59,15 @@ POST /api/bmi
 GET /api/bmi
   - Lấy lịch sử BMI từ cơ sở dữ liệu
   - Trả về danh sách các bản ghi BMI cho Frontend
+
+PUT /api/bmi/:id
+  - Thay đổi lịch sử BMI và cập nhật trong cơ sở dữ liệu
+  - Trả lại danh sách các bản ghi BMI mới cho Frontend
+
+DELETE /api/bmi/:id
+  - Xóa lịch sử BMI trong cơ sở dữ liệu
+  - Trả lại danh sách các bản ghi BMI mới cho Frontend
+
 ```
 
 ## 5. Quy trình Phát triển
