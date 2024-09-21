@@ -1,0 +1,276 @@
+/* App.css */
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --border-color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.calculator {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+/* BmiForm styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #8395a7;
+}
+
+form select {
+  cursor: pointer;
+}
+
+.calculate-btn {
+  margin-right: 20px;
+}
+
+.calculate-btn,
+.save-bmi {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-btn:hover,
+.save-bmi:hover {
+  background-color: #2980b9;
+}
+
+.result {
+  margin-top: 10px;
+}
+
+/* BmiChart styles */
+.bmi-chart {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bmi-chart h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Table styles */
+.table {
+  text-align: center;
+}
+
+.table h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 120px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content button {
+  color: #333;
+  padding: 10px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+  color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.popup h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.popup label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.popup input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.popup button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.popup button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .calculator {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+  }
+}
